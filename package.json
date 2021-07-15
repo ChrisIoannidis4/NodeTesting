@@ -12,9 +12,9 @@
     "got": "^11.8.2",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.2",
     "morgan": "^1.10.0",
     "prettier": "^2.3.2"
-    
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.3",
