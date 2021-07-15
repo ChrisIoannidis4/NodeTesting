@@ -23,6 +23,7 @@
   },
   "scripts": {
     "test": "ava"
+    
   },
   "keywords": [],
   "author": "",
