@@ -4,9 +4,11 @@ const app = express()
 const port = 3000
 const cors = require('cors')
 const morgan = require('morgan')
+const jwt = require ('jsonwebtoken')
+const mongoose = require('mongoose');
 
 app.use(cors())
-app.use(morgan())
+app.use(morgan(':metohod'))
 app.use(helmet())
 app.get('/', (req, res) => {
   res.send('Hello World, this is Chris Ioannidis, and i love the Dropkick Murphys!')
@@ -23,9 +25,25 @@ app.use((req, res, next) => {
 
 })
 
+app.get('/posts', (req, res)=> { res.json(posts)})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
 console.log(process.env.SECRET_MESSAGE)
 console.log(process.env.TOKEN);
+
+const got = require('got');
+
+(async () => {
+	const {body} = await got.post('https://httpbin.org/anything', {
+		json: {
+			hello: 'world'
+		},
+		responseType: 'json'
+	});
+
+	console.log(body.data);
+	//=> {hello: 'world'}
+})();
