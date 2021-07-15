@@ -7,6 +7,8 @@ const morgan = require('morgan')
 const jwt = require ('jsonwebtoken')
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost:27017/nodetesting').then(()=>{console.log('succesfull connection');})
+
 app.use(cors())
 app.use(morgan(':metohod'))
 app.use(helmet())
